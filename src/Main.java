@@ -69,9 +69,22 @@ public class Main {
                             for(String s : ingredients){
                                 line += s + ",";
                             }
-                            List<RecipeByIngredientsResult> suggestedRecipes = recipeLoader.getSuggestedRecipe(line);
-                            for(RecipeByIngredientsResult r : suggestedRecipes){
-                                System.out.printf("ID: %d, Title: %s\n",r.getId(), r.getTitle());
+                            List<RecipeByIngredientsResult> recipes = recipeLoader.getSuggestedRecipe(line);
+                            System.out.println("=== Recipe Suggestions ===");
+                            for (RecipeByIngredientsResult recipe : recipes) {
+                                System.out.printf("\nID: %d | Title: %s\n", recipe.getId(), recipe.getTitle());
+
+                                System.out.printf("✅ Used Ingredients: %d\n", recipe.getUsedIngredientCount());
+                                for(ExtendedIngredients e : recipe.getUsedIngredients()){
+                                    System.out.printf("%s\nAmount: %.2f\nUnit: %s", e.getName(), e.getAmount(), e.getUnit());
+                                }
+                                System.out.println();
+
+                                System.out.printf("❌ Missed Ingredients: %d\n", recipe.getMissedIngredientCount());
+                                for(ExtendedIngredients e : recipe.getMissedIngredients()){
+                                    System.out.printf("%s\nAmount: %.2f\nUnit: %s", e.getName(), e.getAmount(), e.getUnit());
+                                }
+                                System.out.println();
                             }
 
                             break;
