@@ -46,7 +46,7 @@ public class FridgeLoader {
      public void addIngredient(String title){
          try{
 
-             FileWriter writer = new FileWriter("/Users/jefferyyong/IdeaProjects/FridgeFriend_v1/src/Fridge.txt", true);
+             FileWriter writer = new FileWriter("/Users/jefferyyong/IdeaProjects/Fridge-Friend/src/Fridge.txt", true);
              writer.append(title);
              writer.close();
 
@@ -58,7 +58,7 @@ public class FridgeLoader {
      public List<String> loadFridge(){
          List<String> lines = null;
         try{
-            Path path = Paths.get("/Users/jefferyyong/IdeaProjects/FridgeFriend_v1/src/Fridge.txt");
+            Path path = Paths.get("/Users/jefferyyong/IdeaProjects/Fridge-Friend/src/Fridge.txt");
             lines = Files.readAllLines(path);
 
         } catch(IOException e){

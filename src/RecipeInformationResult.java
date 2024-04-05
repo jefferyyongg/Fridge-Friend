@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class GetRecipeInformationResult {
+public class RecipeInformationResult {
     private int id;
     private String title;
     private String vegetarian;

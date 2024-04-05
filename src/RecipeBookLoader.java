@@ -10,7 +10,7 @@ public class RecipeBookLoader {
     public List<String> getRecipeBook(){
         List<String> lines = null;
         try{
-            Path path = Paths.get("/Users/jefferyyong/IdeaProjects/FridgeFriend_v1/src/RecipeBook.txt");
+            Path path = Paths.get("/Users/jefferyyong/IdeaProjects/Fridge-Friend/src/RecipeBook.txt");
             lines = Files.readAllLines(path);
         } catch(IOException e){
             e.printStackTrace();
@@ -20,8 +20,20 @@ public class RecipeBookLoader {
 
     public void addRecipe(String id){
         try{
-            FileWriter writer = new FileWriter("/Users/jefferyyong/IdeaProjects/FridgeFriend_v1/src/RecipeBook.txt", true);
+            FileWriter writer = new FileWriter("/Users/jefferyyong/IdeaProjects/Fridge-Friend/src/RecipeBook.txt", true);
             writer.append(id + "\n");
+            writer.close();
+        } catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void removeRecipe(List<String> lines){
+        try{
+            FileWriter writer = new FileWriter("/Users/jefferyyong/IdeaProjects/Fridge-Friend/src/RecipeBook.txt");
+            for(String line : lines){
+                writer.append(line + "\n");
+            }
             writer.close();
         } catch(IOException e){
             e.printStackTrace();
