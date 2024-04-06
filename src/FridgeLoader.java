@@ -47,7 +47,7 @@ public class FridgeLoader {
          try{
 
              FileWriter writer = new FileWriter("/Users/jefferyyong/IdeaProjects/Fridge-Friend/src/Fridge.txt", true);
-             writer.append(title);
+             writer.append(title + "\n");
              writer.close();
 
          } catch(IOException e){
