@@ -1,4 +1,1 @@
-apples
 pear
-cinnamon
-raisins

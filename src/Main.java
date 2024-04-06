@@ -57,7 +57,7 @@ public class Main {
                                 System.out.println("Title: " + recipeLoader.getRecipeInformation(recipeBookLoader.getRecipeBook().get(receptInput)).getTitle());
                                 System.out.println("Ingredienten: ");
                                 for(ExtendedIngredients e : recipeLoader.getRecipeInformation(recipeBookLoader.getRecipeBook().get(receptInput)).getExtendedIngredients()){
-                                    System.out.printf("\nName: %s\nAmount: %.2f\nUnit: %s\n", e.getName(), e.getAmount(), e.getUnit());
+                                    System.out.printf("Name: %s | Amount: %.2f | Unit: %s\n", e.getName(), e.getAmount(), e.getUnit());
                                 }
                                 System.out.println();
                                 break;
@@ -73,7 +73,7 @@ public class Main {
                     String fridgeInvoer = scanner.nextLine();
                     switch(fridgeInvoer){
                         case "1":
-                            System.out.println("Fridge:");
+                            System.out.println("=== Fridge Ingredienten ===");
                             for(String s : fridge){
                                 System.out.println(s);
                             }
@@ -106,13 +106,13 @@ public class Main {
 
                                 System.out.printf("✅ Used Ingredients: %d\n", recipe.getUsedIngredientCount());
                                 for(ExtendedIngredients e : recipe.getUsedIngredients()){
-                                    System.out.printf("Name: %s\nAmount: %.2f\nUnit: %s", e.getName(), e.getAmount(), e.getUnit());
+                                    System.out.printf("Name: %s | Amount: %.2f | Unit: %s\n", e.getName(), e.getAmount(), e.getUnit());
                                 }
                                 System.out.println();
 
                                 System.out.printf("❌ Missed Ingredients: %d\n", recipe.getMissedIngredientCount());
                                 for(ExtendedIngredients e : recipe.getMissedIngredients()){
-                                    System.out.printf("Name: %s\nAmount: %.2f\nUnit: %s\n", e.getName(), e.getAmount(), e.getUnit());
+                                    System.out.printf("Name: %s | Amount: %.2f | Unit: %s\n", e.getName(), e.getAmount(), e.getUnit());
                                 }
                                 System.out.println();
                             }

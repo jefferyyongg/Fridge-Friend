@@ -14,7 +14,7 @@ public class FridgeLoader {
 
         try{
 
-            FileWriter writer = new FileWriter("/Users/jefferyyong/IdeaProjects/FridgeFriend_v1/src/Fridge.txt");
+            FileWriter writer = new FileWriter("/Users/jefferyyong/IdeaProjects/Fridge-Friend/src/Fridge.txt");
 
             int count = 0;
             for(String s : fridge){
@@ -30,11 +30,14 @@ public class FridgeLoader {
                     }
                 }
             } else {
+                for(String s : fridge){
+                    writer.append(s + "\n");
+                }
                 System.out.println("Fridge does not contain this item.");
             }
 
             for(String s : result){
-                writer.append(s);
+                writer.append(s + "\n");
             }
 
             writer.close();
@@ -56,7 +59,7 @@ public class FridgeLoader {
      }
 
      public List<String> loadFridge(){
-         List<String> lines = null;
+         List<String> lines = new ArrayList<>();
         try{
             Path path = Paths.get("/Users/jefferyyong/IdeaProjects/Fridge-Friend/src/Fridge.txt");
             lines = Files.readAllLines(path);
