@@ -17,7 +17,7 @@ public class RecipeLoader {
         List<RecipeByIngredientsResult> recipes = new ArrayList<>();
         try {
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(new URI("https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + ingredients + "&apiKey=b206fee4e98d4993b0ba230339a1057e"))
+                    .uri(new URI("https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + ingredients + "&apiKey=511f0eda5ee6487ea63b21e8660d8a88"))
                     .GET()
                     .build();
             HttpClient httpClient = HttpClient.newHttpClient();
@@ -41,7 +41,7 @@ public class RecipeLoader {
         RecipeInformationResult recipeInformationResult = new RecipeInformationResult();
         try {
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(new URI("https://api.spoonacular.com/recipes/" + id + "/information?apiKey=b206fee4e98d4993b0ba230339a1057e"))
+                    .uri(new URI("https://api.spoonacular.com/recipes/" + id + "/information?apiKey=511f0eda5ee6487ea63b21e8660d8a88"))
                     .GET()
                     .build();
             HttpClient httpClient = HttpClient.newHttpClient();
@@ -63,7 +63,7 @@ public class RecipeLoader {
     public void getComplexSearch(String query){
         try {
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(new URI("https://api.spoonacular.com/recipes/complexSearch?apiKey=b206fee4e98d4993b0ba230339a1057e&query=" + query))
+                    .uri(new URI("https://api.spoonacular.com/recipes/complexSearch?apiKey=511f0eda5ee6487ea63b21e8660d8a88&query=" + query))
                     .GET()
                     .build();
             HttpClient httpClient = HttpClient.newHttpClient();

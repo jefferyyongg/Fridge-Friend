@@ -34,14 +34,27 @@ public class Main {
                             recipeBookLoader.addRecipe(recipeID);
                             break;
                         case "3":
-                            for(int i = 0; i < lines.size(); i++){
-                                System.out.println(i + ". " + recipeLoader.getRecipeInformation(lines.get(i)).getTitle());
+                            if(recipeBookLoader.getRecipeBook().isEmpty()){
+                                System.out.println("Geen recepten.");
+                                break;
+                            }
+                            System.out.println("=== Recept Verwijderen ===");
+                            for(int i = 1; i < recipeBookLoader.getRecipeBook().size() + 1; i++){
+                                System.out.println(i + ". " + recipeLoader.getRecipeInformation(recipeBookLoader.getRecipeBook().get(i - 1)).getTitle());
                             }
                             String removeInvoer = scanner.nextLine();
-                            lines.remove(recipeBookLoader.getRecipeBook().get(Integer.valueOf(removeInvoer)));
+                            if(Integer.valueOf(removeInvoer) > recipeBookLoader.getRecipeBook().size()){
+                                System.out.println("Ongeldige invoer.");
+                                break;
+                            }
+                            lines.remove(recipeBookLoader.getRecipeBook().get(Integer.valueOf(removeInvoer) - 1));
                             recipeBookLoader.removeRecipe(lines);
                             break;
                         case "4":
+                            if(recipeBookLoader.getRecipeBook().isEmpty()){
+                                System.out.println("Geen recepten.");
+                                break;
+                            }
                             while(true){
                                 for(int i = 0; i < recipeBookLoader.getRecipeBook().size(); i++){
                                     System.out.println(i + ". " + recipeLoader.getRecipeInformation(recipeBookLoader.getRecipeBook().get(i)).getTitle());
