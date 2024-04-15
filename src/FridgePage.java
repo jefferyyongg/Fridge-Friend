@@ -3,11 +3,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FridgePage extends Page {
-    RecipeLoader recipeLoader = new RecipeLoader();
-    FridgeLoader fridgeLoader = new FridgeLoader();
-    RecipeBookLoader recipeBookLoader = new RecipeBookLoader();
-    List<String> fridge = fridgeLoader.loadFridge();
     public void loadPage(Scanner scanner){
+        RecipeLoader recipeLoader = new RecipeLoader();
+        FridgeLoader fridgeLoader = new FridgeLoader();
+        RecipeBookLoader recipeBookLoader = new RecipeBookLoader();
+        List<String> fridge = fridgeLoader.loadFridge();
+
         System.out.println("\nMenu:\n1. Bekijk Fridge\n2. Toevoegen Ingredient\n3. Verwijderen Ingredient\n4. ReceptSuggesties(gebaseerd op voorraad)\n5. Missed Ingredienten(Recepboek ingredienten - Fridge ingredienten)");
         String fridgeInvoer = scanner.nextLine();
         switch(fridgeInvoer){

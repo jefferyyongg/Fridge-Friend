@@ -2,10 +2,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class RecipePage extends Page {
-    RecipeLoader recipeLoader = new RecipeLoader();
-    RecipeBookLoader recipeBookLoader = new RecipeBookLoader();
-    List<String> lines = recipeBookLoader.getRecipeBook();
     public void loadPage(Scanner scanner){
+        RecipeLoader recipeLoader = new RecipeLoader();
+        RecipeBookLoader recipeBookLoader = new RecipeBookLoader();
+        List<String> lines = recipeBookLoader.getRecipeBook();
+
         System.out.println("\nMenu:\n1. Zoek Recept\n2. Toevoegen Recept\n3. Verwijder Recept\n4. Bekijk ReceptenBoek\n");
         String receptInvoer = scanner.nextLine();
         switch(receptInvoer){

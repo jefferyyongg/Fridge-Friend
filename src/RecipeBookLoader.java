@@ -19,12 +19,19 @@ public class RecipeBookLoader {
     }
 
     public void addRecipe(String id){
-        try{
-            FileWriter writer = new FileWriter("/Users/jefferyyong/IdeaProjects/Fridge-Friend/src/RecipeBook.txt", true);
-            writer.append(id + "\n");
-            writer.close();
-        } catch(IOException e){
-            e.printStackTrace();
+        if(id.isEmpty()){
+            System.out.println(
+                    "geen recept gevonden"
+            );
+        } else {
+            try{
+                FileWriter writer = new FileWriter("/Users/jefferyyong/IdeaProjects/Fridge-Friend/src/RecipeBook.txt", true);
+                writer.append(id + "\n");
+                System.out.println("Recept toegevoegd.");
+                writer.close();
+            } catch(IOException e){
+                e.printStackTrace();
+            }
         }
     }
 
