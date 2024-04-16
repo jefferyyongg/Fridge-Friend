@@ -14,6 +14,7 @@ public class RecipePage extends Page {
                 System.out.println("=== Recept Zoeken ===");
                 System.out.println("Zoekterm?: \n");
                 String query = scanner.nextLine();
+                query = encodeReview(query);
                 recipeLoader.getComplexSearch(query);
                 break;
             case "2":

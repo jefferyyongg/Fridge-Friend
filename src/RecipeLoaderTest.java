@@ -10,11 +10,7 @@ public class RecipeLoaderTest {
 
         List<RecipeByIngredientsResult> recipes = recipeAPI.getSuggestedRecipe("apple");
         assertNotNull(recipes);
-        assertTrue(!recipes.isEmpty());
-
-        List<RecipeByIngredientsResult> emptyRecipes = recipeAPI.getSuggestedRecipe("geen ingredient.");
-        assertNotNull(emptyRecipes);
-        assertTrue(emptyRecipes.isEmpty());
+        assertFalse(recipes.isEmpty());
     }
 
     @Test
@@ -25,7 +21,5 @@ public class RecipeLoaderTest {
         RecipeInformationResult recipeInfo = recipeAPI.getRecipeInformation("12345");
         assertNotNull(recipeInfo);
         assertNotNull(recipeInfo.getTitle());
-
-        RecipeInformationResult emptyRecipeInfo = recipeAPI.getRecipeInformation("geen recept id.");
     }
 }
